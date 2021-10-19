@@ -1,9 +1,10 @@
 const express = require("express");
 
 const app = express();
-const handleServer = () => console.log(`App running at port ${3000}`);
+const port = process.env.PORT || 3000;
+const handleServer = () => console.log(`App running at port ${port}`);
 app.get("/", (req, res) => {
-    res.send(200)
+  res.send(200);
 });
 
-app.listen(3000, handleServer);
+app.listen(port, handleServer);
